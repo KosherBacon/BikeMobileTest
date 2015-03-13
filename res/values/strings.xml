@@ -7,4 +7,5 @@
     <string name="manufacturer">Manufacturer:</string>
     <string name="model_name">Model Name:</string>
     <string name="description">Description:</string>
+    <string name="addToCart">Add To Cart</string>
 </resources>
