@@ -2,14 +2,12 @@ package com.KosherBacon.BikeMobileTest;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.*;
 
 /**
  * Created by jkahn on 3/12/15.
@@ -49,7 +47,7 @@ public class BikeChooserActivity extends Activity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             View row = convertView;
-            BikeHolder holder;
+            final BikeHolder holder;
 
             if (row == null) {
                 LayoutInflater inflater = ((Activity) context).getLayoutInflater();
@@ -65,10 +63,20 @@ public class BikeChooserActivity extends Activity {
                 holder = (BikeHolder) row.getTag();
             }
 
-            Bike bike = data[position];
+            final Bike bike = data[position];
             holder.imgIcon.setImageBitmap(bike.getIcon());
             holder.name.setText(bike.getName());
             holder.manufacturer.setText(bike.getManufacturer());
+
+            row.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, BikeDetailsActvity.class);
+                    intent.putExtra("bikeIcon", bike.getIcon());
+                    intent.putExtra("bikeName", bike.getName());
+                    intent.putExtra("bikeManufacturer", bike.getManufacturer());
+                }
+            });
 
             return row;
         }
