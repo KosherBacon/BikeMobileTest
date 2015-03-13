@@ -13,9 +13,11 @@
             </intent-filter>
         </activity>
         <activity android:name="BikeChooserActivity"
+                  android:label="Bike List"
                   android:configChanges="orientation|screenSize" >
         </activity>
         <activity android:name="BikeDetailsActivity"
+                  android:label="Details"
                   android:configChanges="orientation|screenSize"
                   android:uiOptions="splitActionBarWhenNarrow" >
         </activity>

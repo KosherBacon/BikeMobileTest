@@ -23,6 +23,7 @@ public class BikeDetailsActivity extends Activity {
 
         ActionBar actionBar = getActionBar();
         if (actionBar != null) {
+            actionBar.setHomeButtonEnabled(true);
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
