@@ -29,62 +29,7 @@ public class BikeChooserActivity extends Activity {
         }
         BikeArrayAdapter bikeAdapter = new BikeArrayAdapter(getApplicationContext(), R.layout.bike_selector_row, bikes);
         bikeList.setAdapter(bikeAdapter);
-    }
-
-    private class BikeArrayAdapter extends ArrayAdapter<Bike> {
-
-        Context context;
-        int layoutResourceId;
-        Bike[] data;
-
-        public BikeArrayAdapter(Context context, int layoutResourceId, Bike[] data) {
-            super(context, layoutResourceId, data);
-            this.context = context;
-            this.layoutResourceId = layoutResourceId;
-            this.data = data;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            View row = convertView;
-            final BikeHolder holder;
-
-            if (row == null) {
-                LayoutInflater inflater = ((Activity) context).getLayoutInflater();
-                row = inflater.inflate(layoutResourceId, parent, false);
-
-                holder = new BikeHolder();
-                holder.imgIcon = (ImageView)row.findViewById(R.id.bikeListIcon);
-                holder.name = (TextView)row.findViewById(R.id.bikeListName);
-                holder.manufacturer = (TextView)row.findViewById(R.id.bikeListManufacturer);
-
-                row.setTag(holder);
-            } else {
-                holder = (BikeHolder) row.getTag();
-            }
-
-            final Bike bike = data[position];
-            holder.imgIcon.setImageBitmap(bike.getIcon());
-            holder.name.setText(bike.getName());
-            holder.manufacturer.setText(bike.getManufacturer());
-
-            row.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(context, BikeDetailsActivity.class);
-                    intent.putExtra("bike", bike);
-                }
-            });
-
-            return row;
-        }
-
-        class BikeHolder {
-            ImageView imgIcon;
-            TextView name;
-            TextView manufacturer;
-        }
-
+        bikeList.setOnItemClickListener(bikeAdapter.bikeListClick);
     }
 
 }

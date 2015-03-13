@@ -38,6 +38,10 @@ public class Bike implements Parcelable {
         this.manufacturer = "Manufacturer";
     }
 
+    public Bike(Parcel in) {
+        readFromParcel(in);
+    }
+
     public String getName() {
         return this.name;
     }
@@ -100,4 +104,22 @@ public class Bike implements Parcelable {
         dest.writeString(this.description);
         dest.writeParcelable(this.icon, flags);
     }
+
+    private void readFromParcel(Parcel in) {
+        this.name = in.readString();
+        this.manufacturer = in.readString();
+        this.description = in.readString();
+        this.icon = in.readParcelable(getClass().getClassLoader());
+    }
+
+    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+        public Bike createFromParcel(Parcel in) {
+            return new Bike(in);
+        }
+
+        public Bike[] newArray(int size) {
+            return new Bike[size];
+        }
+    };
+
 }
