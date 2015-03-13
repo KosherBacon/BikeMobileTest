@@ -98,6 +98,6 @@ public class Bike implements Parcelable {
         dest.writeString(this.name);
         dest.writeString(this.manufacturer);
         dest.writeString(this.description);
-        dest.writeParcelable(this.icon, Parcelable.CONTENTS_FILE_DESCRIPTOR);
+        dest.writeParcelable(this.icon, flags);
     }
 }
