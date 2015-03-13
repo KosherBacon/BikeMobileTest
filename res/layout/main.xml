@@ -8,23 +8,23 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/editText" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
+            android:id="@+id/passwordField" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/loginPrompt"
-            android:id="@+id/textView" android:layout_above="@+id/editText" android:layout_centerHorizontal="true"/>
+            android:id="@+id/textView" android:layout_above="@+id/passwordField" android:layout_centerHorizontal="true"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:ems="10"
-            android:id="@+id/editText2" android:layout_above="@+id/textView" android:layout_centerHorizontal="true"/>
+            android:id="@+id/usernameField" android:layout_above="@+id/textView" android:layout_centerHorizontal="true"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/emailPrompt"
-            android:id="@+id/textView2" android:layout_above="@+id/editText2" android:layout_centerHorizontal="true"/>
+            android:id="@+id/textView2" android:layout_above="@+id/usernameField" android:layout_centerHorizontal="true"/>
 </RelativeLayout>
