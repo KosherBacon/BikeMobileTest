@@ -1,5 +1,7 @@
 package com.KosherBacon.BikeMobileTest;
 
+import android.graphics.Bitmap;
+
 /**
  * Created by jkahn on 3/12/15.
  */
@@ -19,6 +21,11 @@ public class Bike {
     The manufacturer of the bike
      */
     private String manufacturer;
+
+    /*
+    An image to use as the icon of the bike
+     */
+    private Bitmap icon;
 
     /*
     Create a bike object with default values
@@ -41,6 +48,10 @@ public class Bike {
         return this.manufacturer;
     }
 
+    public Bitmap getIcon() {
+        return this.icon;
+    }
+
     /*
     Returns a boolean for whether of not it was able to update the name of the bike (empty strings are not okay)
      */
@@ -61,6 +72,18 @@ public class Bike {
         }
         this.description = description;
         return true;
+    }
+
+    public boolean setManufacturer(String manufacturer) {
+        if (name.isEmpty()) {
+            return false;
+        }
+        this.manufacturer = manufacturer;
+        return true;
+    }
+
+    public void setIcon(Bitmap icon) {
+        this.icon = icon;
     }
 
 }
