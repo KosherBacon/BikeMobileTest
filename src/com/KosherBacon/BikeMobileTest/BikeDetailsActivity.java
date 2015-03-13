@@ -2,6 +2,7 @@ package com.KosherBacon.BikeMobileTest;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,9 +34,13 @@ public class BikeDetailsActivity extends Activity {
         TextView manufacturer = (TextView) findViewById(R.id.manufacturer);
         TextView description = (TextView) findViewById(R.id.description);
 
+        ImageView icon = (ImageView) findViewById(R.id.iconView);
+
         model.setText(this.bike.getName());
         manufacturer.setText(this.bike.getManufacturer());
         description.setText(this.bike.getDescription());
+
+        icon.setImageResource(this.bike.getIcon());
 
     }
 

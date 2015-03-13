@@ -1,6 +1,8 @@
 package com.KosherBacon.BikeMobileTest;
 
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -27,7 +29,7 @@ public class Bike implements Parcelable {
     /*
     An image to use as the icon of the bike
      */
-    private Bitmap icon;
+    private int icon;
 
     /*
     Create a bike object with default values
@@ -54,7 +56,7 @@ public class Bike implements Parcelable {
         return this.manufacturer;
     }
 
-    public Bitmap getIcon() {
+    public int getIcon() {
         return this.icon;
     }
 
@@ -88,7 +90,7 @@ public class Bike implements Parcelable {
         return true;
     }
 
-    public void setIcon(Bitmap icon) {
+    public void setIcon(int icon) {
         this.icon = icon;
     }
 
@@ -102,14 +104,14 @@ public class Bike implements Parcelable {
         dest.writeString(this.name);
         dest.writeString(this.manufacturer);
         dest.writeString(this.description);
-        dest.writeParcelable(this.icon, flags);
+        dest.writeInt(this.icon);
     }
 
     private void readFromParcel(Parcel in) {
         this.name = in.readString();
         this.manufacturer = in.readString();
         this.description = in.readString();
-        this.icon = in.readParcelable(getClass().getClassLoader());
+        this.icon = in.readInt();
     }
 
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {

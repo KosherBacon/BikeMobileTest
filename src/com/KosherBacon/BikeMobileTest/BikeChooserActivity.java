@@ -1,6 +1,7 @@
 package com.KosherBacon.BikeMobileTest;
 
 import android.app.Activity;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.widget.*;
 import net._01001111.text.LoremIpsum;
@@ -19,12 +20,13 @@ public class BikeChooserActivity extends Activity {
 
         LoremIpsum lorem = new LoremIpsum();
 
-        Bike[] bikes = new Bike[100];
-        for (int i = 0; i < 100; i++) {
+        Bike[] bikes = new Bike[20];
+        for (int i = 0; i < 20; i++) {
             bikes[i] = new Bike();
             bikes[i].setName("Roadster");
             bikes[i].setManufacturer("Schwinn");
             bikes[i].setDescription(lorem.paragraphs(2, true));
+            bikes[i].setIcon(R.drawable.bike);
         }
         BikeArrayAdapter bikeAdapter = new BikeArrayAdapter(getApplicationContext(), R.layout.bike_selector_row, bikes);
         bikeList.setAdapter(bikeAdapter);
