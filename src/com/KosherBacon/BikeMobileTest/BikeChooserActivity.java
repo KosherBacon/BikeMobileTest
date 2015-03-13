@@ -71,7 +71,7 @@ public class BikeChooserActivity extends Activity {
             row.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(context, BikeDetailsActvity.class);
+                    Intent intent = new Intent(context, BikeDetailsActivity.class);
                     intent.putExtra("bikeIcon", bike.getIcon());
                     intent.putExtra("bikeName", bike.getName());
                     intent.putExtra("bikeManufacturer", bike.getManufacturer());
