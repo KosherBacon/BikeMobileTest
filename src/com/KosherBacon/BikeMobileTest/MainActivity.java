@@ -1,6 +1,7 @@
 package com.KosherBacon.BikeMobileTest;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,7 +34,7 @@ public class MainActivity extends Activity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String user = usernameField.getText().toString();
+                String user = usernameField.getText().toString().toLowerCase();
                 String pass = passwordField.getText().toString();
                 if (user.isEmpty() || pass.isEmpty()) {
                     Toast.makeText(getBaseContext(), "Complete all fields!", Toast.LENGTH_SHORT).show();
@@ -41,7 +42,10 @@ public class MainActivity extends Activity {
                     if (!user.equals(username) || !pass.equals(password)) {
                         Toast.makeText(getBaseContext(), "Invalid username or password!", Toast.LENGTH_SHORT).show();
                     } else {
-
+                        Intent settings = new Intent(getApplicationContext(), BikeChooserActivity.class);
+                        settings.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        getApplicationContext().startActivity(settings);
+                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     }
                 }
             }
