@@ -57,7 +57,7 @@ public class Bike {
     */
     public boolean setDescription(String description) {
         if (description.isEmpty()) {
-            return false
+            return false;
         }
         this.description = description;
         return true;
