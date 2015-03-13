@@ -3,7 +3,7 @@
     <string name="app_name">BikeMobileTest</string>
     <string name="loginPrompt">Please Enter Password:</string>
     <string name="emailPrompt">Username (E-Mail Address):</string>
-    <string name="loginButton">Login</string>
+    <string name="loginButton">Submit</string>
     <string name="manufacturer">Manufacturer:</string>
     <string name="model_name">Model Name:</string>
     <string name="description">Description:</string>
