@@ -26,6 +26,8 @@ public class BikeDetailsActivity extends Activity {
             finish();
         }
 
+        setContentView(R.layout.bike_details);
+
     }
 
 }
