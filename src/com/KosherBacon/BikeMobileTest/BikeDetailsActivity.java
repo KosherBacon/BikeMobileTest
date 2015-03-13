@@ -9,8 +9,13 @@ import android.os.Bundle;
 public class BikeDetailsActivity extends Activity {
 
     @Override
-    public void OnClick(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        /*
+        Read in the bike details passed by BikeChooserActivity
+         */
+
     }
 
 }
