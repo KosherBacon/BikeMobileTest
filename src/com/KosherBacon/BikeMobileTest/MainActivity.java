@@ -37,9 +37,12 @@ public class MainActivity extends Activity {
                 String pass = passwordField.getText().toString();
                 if (user.isEmpty() || pass.isEmpty()) {
                     Toast.makeText(getBaseContext(), "Complete all fields!", Toast.LENGTH_SHORT).show();
-                }
-                if (!user.equals(username) || !pass.equals(password)) {
-                    Toast.makeText(getBaseContext(), "Invalid username or password!", Toast.LENGTH_SHORT).show();
+                } else {
+                    if (!user.equals(username) || !pass.equals(password)) {
+                        Toast.makeText(getBaseContext(), "Invalid username or password!", Toast.LENGTH_SHORT).show();
+                    } else {
+
+                    }
                 }
             }
         });
