@@ -23,6 +23,14 @@ public class BikeChooserActivity extends Activity {
 
         final ListView bikeList = (ListView) findViewById(R.id.bikeList);
 
+        Bike[] bikes = new Bike[100];
+        for (int i = 0; i < 100; i++) {
+            bikes[i] = new Bike();
+            bikes[i].setName("Roadster");
+            bikes[i].setManufacturer("Schwinn");
+        }
+        BikeArrayAdapter bikeAdapter = new BikeArrayAdapter(getApplicationContext(), R.layout.bike_selector_row, bikes);
+        bikeList.setAdapter(bikeAdapter);
     }
 
     private class BikeArrayAdapter extends ArrayAdapter<Bike> {
@@ -58,7 +66,7 @@ public class BikeChooserActivity extends Activity {
             }
 
             Bike bike = data[position];
-            //holder.imgIcon.setImageResource(bike.getIcon());
+            holder.imgIcon.setImageBitmap(bike.getIcon());
             holder.name.setText(bike.getName());
             holder.manufacturer.setText(bike.getManufacturer());
 
