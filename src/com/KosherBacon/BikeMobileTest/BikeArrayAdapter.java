@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 
+import java.text.DecimalFormat;
+
 /**
  * Created by jkahn on 3/13/15.
  */
@@ -33,9 +35,10 @@ public class BikeArrayAdapter extends ArrayAdapter<Bike> {
             row = inflater.inflate(layoutResourceId, parent, false);
 
             holder = new BikeHolder();
-            holder.imgIcon = (ImageView)row.findViewById(R.id.bikeListIcon);
-            holder.name = (TextView)row.findViewById(R.id.bikeListName);
-            holder.manufacturer = (TextView)row.findViewById(R.id.bikeListManufacturer);
+            holder.imgIcon = (ImageView) row.findViewById(R.id.bikeListIcon);
+            holder.name = (TextView) row.findViewById(R.id.bikeListName);
+            holder.manufacturer = (TextView) row.findViewById(R.id.bikeListManufacturer);
+            holder.price = (TextView) row.findViewById(R.id.bikePrice);
 
             row.setTag(holder);
         } else {
@@ -46,6 +49,8 @@ public class BikeArrayAdapter extends ArrayAdapter<Bike> {
         holder.imgIcon.setImageResource(bike.getIcon());
         holder.name.setText(bike.getModel());
         holder.manufacturer.setText(bike.getManufacturer());
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        holder.price.setText(decimalFormat.format(bike.getPrice()));
 
         return row;
     }
@@ -54,6 +59,7 @@ public class BikeArrayAdapter extends ArrayAdapter<Bike> {
         ImageView imgIcon;
         TextView name;
         TextView manufacturer;
+        TextView price;
     }
 
     public ListView.OnItemClickListener bikeListClick = new ListView.OnItemClickListener() {

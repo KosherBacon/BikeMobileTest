@@ -27,6 +27,7 @@ public class BikeChooserActivity extends Activity {
             bikes[i].setManufacturer("Schwinn");
             bikes[i].setDescription(lorem.paragraphs((int) (Math.random() * 3 + 1), true));
             bikes[i].setIcon(R.drawable.bike);
+            bikes[i].setPrice(Math.random() * 1000);
         }
         BikeArrayAdapter bikeAdapter = new BikeArrayAdapter(getApplicationContext(), R.layout.bike_selector_row, bikes);
         bikeList.setAdapter(bikeAdapter);
