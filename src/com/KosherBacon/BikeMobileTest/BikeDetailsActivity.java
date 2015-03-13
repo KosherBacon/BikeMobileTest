@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
+
 /**
  * Created by jkahn on 3/13/15.
  */
@@ -21,12 +23,6 @@ public class BikeDetailsActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        ActionBar actionBar = getActionBar();
-        if (actionBar != null) {
-            actionBar.setHomeButtonEnabled(true);
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
-
         /*
         Read in the bike details passed by BikeChooserActivity
          */
@@ -36,6 +32,14 @@ public class BikeDetailsActivity extends Activity {
         } else {
             Toast.makeText(getBaseContext(), "ERROR: Didn't receive bike details!", Toast.LENGTH_SHORT).show();
             finish();
+        }
+
+        ActionBar actionBar = getActionBar();
+        if (actionBar != null) {
+            DecimalFormat decimalFormat = new DecimalFormat("#.##");
+            actionBar.setTitle(this.bike.getModel() + " - $" + decimalFormat.format(this.bike.getPrice()));
+            actionBar.setHomeButtonEnabled(true);
+            actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
         setContentView(R.layout.bike_details);

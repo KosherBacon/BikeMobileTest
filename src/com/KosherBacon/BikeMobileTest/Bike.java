@@ -129,6 +129,7 @@ public class Bike implements Parcelable {
         dest.writeString(this.manufacturer);
         dest.writeString(this.description);
         dest.writeInt(this.icon);
+        dest.writeDouble(this.price);
     }
 
     private void readFromParcel(Parcel in) {
@@ -136,6 +137,7 @@ public class Bike implements Parcelable {
         this.manufacturer = in.readString();
         this.description = in.readString();
         this.icon = in.readInt();
+        this.price = in.readDouble();
     }
 
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
