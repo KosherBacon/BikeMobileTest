@@ -49,8 +49,11 @@ public class BikeArrayAdapter extends ArrayAdapter<Bike> {
         holder.imgIcon.setImageResource(bike.getIcon());
         holder.name.setText(bike.getModel());
         holder.manufacturer.setText(bike.getManufacturer());
+        /*
+        Ensure that the price can only have two decimal places
+         */
         DecimalFormat decimalFormat = new DecimalFormat("#.##");
-        holder.price.setText(decimalFormat.format(bike.getPrice()));
+        holder.price.setText("$" + decimalFormat.format(bike.getPrice()));
 
         return row;
     }
