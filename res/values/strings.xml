@@ -3,4 +3,5 @@
     <string name="app_name">BikeMobileTest</string>
     <string name="loginPrompt">Please Enter Password:</string>
     <string name="emailPrompt">Username (E-Mail Address):</string>
+    <string name="loginButton">Login</string>
 </resources>
