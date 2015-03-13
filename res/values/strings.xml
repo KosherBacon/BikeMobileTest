@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">BikeMobileTest</string>
+    <string name="loginPrompt">Please Enter Password:</string>
+    <string name="emailPrompt">Username (E-Mail Address):</string>
 </resources>
