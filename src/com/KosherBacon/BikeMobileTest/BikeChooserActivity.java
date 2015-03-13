@@ -23,7 +23,7 @@ public class BikeChooserActivity extends Activity {
         Bike[] bikes = new Bike[20];
         for (int i = 0; i < 20; i++) {
             bikes[i] = new Bike();
-            bikes[i].setName("Roadster");
+            bikes[i].setModel("Roadster");
             bikes[i].setManufacturer("Schwinn");
             bikes[i].setDescription(lorem.paragraphs((int) (Math.random() * 3 + 1), true));
             bikes[i].setIcon(R.drawable.bike);

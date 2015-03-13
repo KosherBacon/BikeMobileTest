@@ -36,7 +36,7 @@ public class BikeDetailsActivity extends Activity {
 
         ImageView icon = (ImageView) findViewById(R.id.iconView);
 
-        model.setText(this.bike.getName());
+        model.setText(this.bike.getModel());
         manufacturer.setText(this.bike.getManufacturer());
         description.setText(this.bike.getDescription());
 

@@ -44,7 +44,7 @@ public class BikeArrayAdapter extends ArrayAdapter<Bike> {
 
         Bike bike = data[position];
         holder.imgIcon.setImageResource(bike.getIcon());
-        holder.name.setText(bike.getName());
+        holder.name.setText(bike.getModel());
         holder.manufacturer.setText(bike.getManufacturer());
 
         return row;
