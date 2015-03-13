@@ -15,6 +15,14 @@ public class MainActivity extends Activity {
         setContentView(R.layout.main);
 
         /*
+        NEVER EVER EVER EVER EVER EVER EVER have hardcoded username and passwords.
+
+        This is only done for sake of simplicity to quickly prototype this app
+         */
+        final String username = "kosher@bacon.com";
+        final String password = "ilikebacon";
+
+        /*
         EditText fields from the main.xml page to later grab data from
          */
         final EditText usernameField = (EditText) findViewById(R.id.usernameField);
@@ -29,6 +37,9 @@ public class MainActivity extends Activity {
                 String pass = passwordField.getText().toString();
                 if (user.isEmpty() || pass.isEmpty()) {
                     Toast.makeText(getBaseContext(), "Complete all fields!", Toast.LENGTH_SHORT).show();
+                }
+                if (!user.equals(username) || !pass.equals(password)) {
+                    Toast.makeText(getBaseContext(), "Invalid username or password!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
