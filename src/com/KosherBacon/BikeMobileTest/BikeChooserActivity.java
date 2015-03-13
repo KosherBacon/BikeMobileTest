@@ -38,7 +38,7 @@ public class BikeChooserActivity extends Activity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             View row = convertView;
-            BikeHolder holder = null;
+            BikeHolder holder;
 
             if (row == null) {
                 LayoutInflater inflater = ((Activity) context).getLayoutInflater();
