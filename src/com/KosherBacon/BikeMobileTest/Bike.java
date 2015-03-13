@@ -1,11 +1,13 @@
 package com.KosherBacon.BikeMobileTest;
 
 import android.graphics.Bitmap;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 /**
  * Created by jkahn on 3/12/15.
  */
-public class Bike {
+public class Bike implements Parcelable {
 
     /*
     The specific name of the bike
@@ -86,4 +88,16 @@ public class Bike {
         this.icon = icon;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.name);
+        dest.writeString(this.manufacturer);
+        dest.writeString(this.description);
+        dest.writeParcelable(this.icon, Parcelable.CONTENTS_FILE_DESCRIPTOR);
+    }
 }
